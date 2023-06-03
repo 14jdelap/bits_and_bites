@@ -16,3 +16,24 @@ Bits in isolation are not helpful. We need bits and context to derive meaning fr
 - Signed or unsigned integer `65`
 - Single-precision (32 bit) float `9.10E-44`
 - Double-precision (64 bit) float `3.21E-322`
+
+## Problems
+
+- Protobuf Varint: encode an integer argument as my implementation of a Protobuf Varint
+- Sneaky NaN: encode and decode a message in the mantissa of a floating point
+- TCP SYN Flood: parse packets to determine the percentage of incoming SYN messages that were ACKed
+
+Pending
+
+- UTF-8 Truncate: manipulating data in UTF-8 encoding
+- CSS color convert: hexadecimal as an output format
+- Terminal beeping: ASCII as binary encoding and tty interfacee
+
+## Key concepts
+
+- Big and little endian ordering
+- Bitwise operations
+- IEEE 754 floating point spec
+- Bytes and hexadecimals
+- Unicode as the universal identifier of characters
+- Character encodings like UTF-8, UTF-16, and UTF-32
