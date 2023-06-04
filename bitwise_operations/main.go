@@ -23,13 +23,17 @@ func main() {
 	}
 
 	log.Printf("The integer %d %s\n", i, message)
+
+	// showInt(100)
+	showString("hello")
+	// showFloat(100.1)
 }
 
 // isAnyBitOn returns true if at least one bit in the integer is on.
 func isAnyBitOn(i int32) bool {
 	iup := unsafe.Pointer(&i)
 	for i := 0; i < 4; i++ {
-		bitOn := *(*byte)(unsafe.Add(iup, i)) | 0b00000000
+		bitOn := *(*byte)(unsafe.Add(iup, i)) | 0b0
 
 		if bitOn != 0 {
 			return true
