@@ -22,6 +22,7 @@ Bits in isolation are not helpful. We need bits and context to derive meaning fr
 - Protobuf Varint: encode an integer argument as my implementation of a Protobuf Varint
 - Sneaky NaN: encode and decode a message in the mantissa of a floating point
 - TCP SYN Flood: parse packets to determine the percentage of incoming SYN messages that were ACKed
+- Show Bytes: practice problems around byte ordering and showing the bytes of different data types
 
 Pending
 
