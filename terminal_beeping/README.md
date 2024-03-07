@@ -8,3 +8,5 @@ This is meant to:
 
 - Show that even ASCII is a binary encoding
 - Expose concepts related to the tty interface
+
+ASCII is a binary encoding of both familiar characters (e.g. `A`, `5`) and characters like `null`, `backspace`

@@ -4,6 +4,11 @@ import (
 	"fmt"
 )
 
+const (
+	mask            = 0b01111111
+	continuationBit = 0b10000000
+)
+
 func main() {
 
 	var limit uint64 = 1 << 30
@@ -19,17 +24,17 @@ func main() {
 
 // encode converts a uint64 into a Protobuf Base 128 Varint in []byte format
 // and little endian ordering.
-// encode loops until the uint64 intput it 0. While it's greater than 0, it
-// copies the first 7 bits of the uint64, shifts right by 7m and marks its
+// encode loops until the uint64 input it 0. While it's greater than 0, it
+// copies the first 7 bits of the uint64, shifts right by 7 and marks its
 // first bit as 1 if there's a successive byte (i.e., if it's value is still
 // greater than 0). When the loop finishes it returns the []byte result.
 func encode(i uint64) []byte {
 	result := make([]byte, 0, 10)
 	for i > 0 {
-		b := byte(i & 0b01111111)
+		b := byte(i & mask)
 		i >>= 7
 		if i > 0 {
-			b |= 0b10000000
+			b |= continuationBit
 		}
 		result = append(result, b)
 	}
