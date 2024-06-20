@@ -18,7 +18,7 @@ func TestIsPowerOfTwo(t *testing.T) {
 	for _, tc := range testCases {
 		result := IsPowerOfTwo(tc.input)
 		if result != tc.expected {
-			t.Errorf("expected isPowerOfTwo(%d) to be %v, but got %v", tc.input, tc.expected, result)
+			t.Errorf("expected IsPowerOfTwo(%d) to be %v, but got %v", tc.input, tc.expected, result)
 		}
 	}
 }
